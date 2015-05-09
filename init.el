@@ -62,6 +62,12 @@
 ;; Flycheck
 (add-hook 'after-init-hook 'global-flycheck-mode)
 
+;; Helm
+(helm-mode 1)
+
+;; Tie-in helm and projectile
+(helm-projectile-on)
+
 ;;; III. Keybindings ---------------------------------------------
 
 ;; Magit Status
