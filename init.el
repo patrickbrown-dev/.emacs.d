@@ -1,10 +1,12 @@
 ;;; init.el -- entry point to emacs config
-;;
-;;; Table of contents:
-;;    I.   Melpa
-;;    II.  Defaults
-;;    III. Keybindings
-;;    IV.  Elixir
+
+;;; Commentary:
+;;  I.   Melpa
+;;  II.  Defaults
+;;  III. Keybindings
+;;  IV.  Elixir
+
+;;; Code:
 
 ;;; I. Melpa Setup ------------------------------------------------
 
@@ -39,13 +41,20 @@
                        "/bin:"
                        "/usr/sbin:"
                        "/sbin:"
-                       "/opt/X11/bin"))
+                       "/opt/X11/bin:"
+                       (getenv "PATH")))
 
 ;; Magit
 (setq magit-last-seen-setup-instructions "1.4.0")
 
 ;; Projectile
 (projectile-global-mode)
+
+;; Company
+(add-hook 'after-init-hook 'global-company-mode)
+
+;; Flycheck
+(add-hook 'after-init-hook #'global-flycheck-mode)
 
 ;;; III. Keybindings ---------------------------------------------
 
@@ -59,3 +68,5 @@
            (function (lambda ()
                        (whitespace-mode t)
                        (alchemist-mode t))))
+
+;;; init.el ends here
