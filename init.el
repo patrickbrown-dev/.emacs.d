@@ -32,8 +32,14 @@
 ;; Kill the alarm bell
 (setq ring-bell-function 'ignore)
 
+;; Move backups and autosaves to temporary dir
+(setq backup-directory-alist
+      `((".*" . ,temporary-file-directory)))
+(setq auto-save-file-name-transforms
+      `((".*" ,temporary-file-directory t)))
+
 ;; Whitespace
-(setq whitespace-style (quote (trailing empty)))
+(setq whitespace-style (quote (trailing empty lines)))
 
 ;; Eshell
 (setenv "PATH" (concat "/usr/local/bin:"
