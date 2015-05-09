@@ -41,6 +41,12 @@
                        "/sbin:"
                        "/opt/X11/bin"))
 
+;; Magit
+(setq magit-last-seen-setup-instructions "1.4.0")
+
+;; Projectile
+(projectile-global-mode)
+
 ;;; III. Keybindings ---------------------------------------------
 
 ;; Magit Status
