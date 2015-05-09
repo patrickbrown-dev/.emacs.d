@@ -48,13 +48,13 @@
 (setq magit-last-seen-setup-instructions "1.4.0")
 
 ;; Projectile
-(projectile-global-mode)
+(add-hook 'after-init-hook 'projectile-global-mode)
 
 ;; Company
 (add-hook 'after-init-hook 'global-company-mode)
 
 ;; Flycheck
-(add-hook 'after-init-hook #'global-flycheck-mode)
+(add-hook 'after-init-hook 'global-flycheck-mode)
 
 ;;; III. Keybindings ---------------------------------------------
 
