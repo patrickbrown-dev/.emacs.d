@@ -20,7 +20,7 @@
 ;;; II. Defaults --------------------------------------------------
 
 ;; Secrets
-(load "~/.emacs.d/secrets")
+(if (file-exists-p "~/.emacs.d/secrets.el") (load "~/.emacs.d/secrets"))
 
 ;; Disable tool bar
 (tool-bar-mode -1)
