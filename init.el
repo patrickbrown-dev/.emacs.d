@@ -19,6 +19,9 @@
 
 ;;; II. Defaults --------------------------------------------------
 
+;; Secrets
+(load "~/.emacs.d/secrets")
+
 ;; Disable tool bar
 (tool-bar-mode -1)
 
@@ -47,8 +50,10 @@
                        "/bin:"
                        "/usr/sbin:"
                        "/sbin:"
-                       "/opt/X11/bin:"
                        (getenv "PATH")))
+
+;; Evil
+(evil-mode 1)
 
 ;; Magit
 (setq magit-last-seen-setup-instructions "1.4.0")
