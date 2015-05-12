@@ -1,18 +1,11 @@
-;;; init.el -- entry point to emacs config
-
+;;; init.el --- entry point to emacs config
+;;
 ;;; Commentary:
-;;  I.   Melpa
-;;  II.  Defaults
-;;  III. Modes
-;;  IV.  Keybindings
-;;  V.   Elixir
-
+;;
 ;;; Code:
 
-;;; I. Melpa Setup ------------------------------------------------
-
+;; Melpa setup
 (require 'package)
-
 (add-to-list 'package-archives
 	     '("melpa" . "http://melpa.org/packages/") t)
 (when (< emacs-major-version 24)
@@ -25,10 +18,10 @@
     (progn
       (package-refresh-contents)
       (package-install 'use-package)))
-
 (require 'use-package)
 
-;;; II. Defaults --------------------------------------------------
+;; Load path
+(setq load-path (cons "~/.emacs.d/lib" load-path))
 
 ;; Secrets
 (if (file-exists-p "~/.emacs.d/secrets.el")
@@ -64,50 +57,9 @@
                        "/sbin:"
                        (getenv "PATH")))
 
-;;; III. Modes
+(require 'default-modules)
+(require 'elixir-modules)
 
-(use-package evil
-  :config (evil-mode 1))
-
-(use-package magit
-  :init (setq magit-last-seen-setup-instructions "1.4.0")
-  :bind ("C-c g s" . magit-status))
-
-(use-package projectile
-  :config (add-hook 'after-init-hook 'projectile-global-mode))
-
-(use-package company
-  :config (add-hook 'after-init-hook 'global-company-mode))
-
-(use-package flycheck
-  :config (add-hook 'after-init-hook 'global-flycheck-mode))
-
-(use-package helm
-  :config (helm-mode 1))
-
-(use-package helm-projectile
-  :config (helm-projectile-on))
-
-(use-package paredit
-  :config (paredit-mode t))
-
-(use-package solarized-theme
-  :config (load-theme 'solarized-dark t))
-
-;;; IV. Keybindings ---------------------------------------------
-
-;; Commentary
 (global-set-key (kbd "C-c C-u") 'comment-or-uncomment-region)
-
-;;; V. Elixir ---------------------------------------------------
-
-(defun elixir-modes ()
-  "Modes to use while editing elixir files."
-  (use-package elixir-mode)
-  (use-package alchemist
-    :config (alchemist-mode t))
-  (whitespace-mode t))
-
-(add-hook' elixir-mode-hook 'elixir-modes)
 
 ;;; init.el ends here
