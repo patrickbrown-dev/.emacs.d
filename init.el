@@ -3,24 +3,36 @@
 ;;; Commentary:
 ;;  I.   Melpa
 ;;  II.  Defaults
-;;  III. Keybindings
-;;  IV.  Elixir
+;;  III. Modes
+;;  IV.  Keybindings
+;;  V.   Elixir
 
 ;;; Code:
 
 ;;; I. Melpa Setup ------------------------------------------------
 
 (require 'package)
+
 (add-to-list 'package-archives
 	     '("melpa" . "http://melpa.org/packages/") t)
 (when (< emacs-major-version 24)
   (add-to-list 'package-archives '("gnu" . "http://elpa.gnu.org/packages/")))
+
 (package-initialize)
+
+;; Install use-package if doesn't exist.
+(if (not (package-installed-p 'use-package))
+    (progn
+      (package-refresh-contents)
+      (package-install 'use-package)))
+
+(require 'use-package)
 
 ;;; II. Defaults --------------------------------------------------
 
 ;; Secrets
-(if (file-exists-p "~/.emacs.d/secrets.el") (load "~/.emacs.d/secrets"))
+(if (file-exists-p "~/.emacs.d/secrets.el")
+    (load "~/.emacs.d/secrets"))
 
 ;; Disable tool bar
 (tool-bar-mode -1)
@@ -52,38 +64,50 @@
                        "/sbin:"
                        (getenv "PATH")))
 
-;; Evil
-(evil-mode 1)
+;;; III. Modes
 
-;; Magit
-(setq magit-last-seen-setup-instructions "1.4.0")
+(use-package evil
+  :config (evil-mode 1))
 
-;; Projectile
-(add-hook 'after-init-hook 'projectile-global-mode)
+(use-package magit
+  :init (setq magit-last-seen-setup-instructions "1.4.0")
+  :bind ("C-c g s" . magit-status))
 
-;; Company
-(add-hook 'after-init-hook 'global-company-mode)
+(use-package projectile
+  :config (add-hook 'after-init-hook 'projectile-global-mode))
 
-;; Flycheck
-(add-hook 'after-init-hook 'global-flycheck-mode)
+(use-package company
+  :config (add-hook 'after-init-hook 'global-company-mode))
 
-;; Helm
-(helm-mode 1)
+(use-package flycheck
+  :config (add-hook 'after-init-hook 'global-flycheck-mode))
 
-;; Tie-in helm and projectile
-(helm-projectile-on)
+(use-package helm
+  :config (helm-mode 1))
 
-;;; III. Keybindings ---------------------------------------------
+(use-package helm-projectile
+  :config (helm-projectile-on))
 
-;; Magit Status
-(global-set-key (kbd "C-c g s") 'magit-status)
+(use-package paredit
+  :config (paredit-mode t))
 
-;;; IV. Elixir ---------------------------------------------------
+(use-package solarized-theme
+  :config (load-theme 'solarized-dark t))
 
-;; Hooks
-(add-hook' elixir-mode-hook
-           (function (lambda ()
-                       (whitespace-mode t)
-                       (alchemist-mode t))))
+;;; IV. Keybindings ---------------------------------------------
+
+;; Commentary
+(global-set-key (kbd "C-c C-u") 'comment-or-uncomment-region)
+
+;;; V. Elixir ---------------------------------------------------
+
+(defun elixir-modes ()
+  "Modes to use while editing elixir files."
+  (use-package elixir-mode)
+  (use-package alchemist
+    :config (alchemist-mode t))
+  (whitespace-mode t))
+
+(add-hook' elixir-mode-hook 'elixir-modes)
 
 ;;; init.el ends here
