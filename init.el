@@ -58,6 +58,7 @@
                        (getenv "PATH")))
 
 (require 'default-modules)
+(require 'ruby-modules)
 (require 'elixir-modules)
 
 (global-set-key (kbd "C-c C-u") 'comment-or-uncomment-region)
