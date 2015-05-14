@@ -26,8 +26,5 @@
 (use-package paredit
   :config (paredit-mode t))
 
-(use-package solarized-theme
-  :config (load-theme 'solarized-dark t))
-
 (provide 'default-modules)
 ;;; default-modules.el ends here
