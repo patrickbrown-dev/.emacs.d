@@ -12,8 +12,7 @@
       (let ((shell-file-name "/bin/bash"))
         ad-do-it))
     (ad-activate 'rspec-compile))
-  (use-package rvm
-    :config (rvm-use-default))
+  (use-package rvm)
   (use-package rainbow-delimiters
     :config (rainbow-delimiters-mode-enable))
   (whitespace-mode t))
