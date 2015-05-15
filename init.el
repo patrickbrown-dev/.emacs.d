@@ -27,8 +27,16 @@
 (if (file-exists-p "~/.emacs.d/secrets.el")
     (load "~/.emacs.d/secrets"))
 
+;; Use wombat, a fine built-in theme.
+(load-theme 'wombat t)
+;; If it's bright out, maybe use this theme instead:
+;; (load-theme 'dichromacy t)
+
 ;; Disable tool bar
 (tool-bar-mode -1)
+
+;; Disable scroll bar
+(scroll-bar-mode -1)
 
 ;; Disable menu bar in CLI mode
 (when (not (display-graphic-p))
