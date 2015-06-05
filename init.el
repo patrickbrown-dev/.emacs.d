@@ -55,7 +55,7 @@
       `((".*" ,temporary-file-directory t)))
 
 ;; Whitespace
-(setq whitespace-style (quote (trailing empty lines)))
+(setq whitespace-style (quote (face trailing empty lines)))
 
 ;; Eshell
 (setenv "PATH" (concat "/usr/local/bin:"
