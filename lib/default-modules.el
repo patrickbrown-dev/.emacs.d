@@ -17,6 +17,10 @@
 (use-package flycheck
   :config (add-hook 'after-init-hook 'global-flycheck-mode))
 
+(use-package flycheck-haskell
+  :config (eval-after-load 'flycheck
+            '(add-hook 'flycheck-mode-hook #'flycheck-haskell-setup)))
+
 (use-package helm
   :config (helm-mode 1))
 

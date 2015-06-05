@@ -68,6 +68,7 @@
 (require 'default-modules)
 (require 'ruby-modules)
 (require 'elixir-modules)
+(require 'haskell-modules)
 
 (global-set-key (kbd "C-c C-u") 'comment-or-uncomment-region)
 
