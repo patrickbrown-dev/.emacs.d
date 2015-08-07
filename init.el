@@ -13,6 +13,10 @@
 
 (package-initialize)
 
+;; Start in scratch buffer
+(setq inhibit-startup-screen t)
+(setq inhibit-splash-screen t)
+
 ;; Install use-package if doesn't exist.
 (if (not (package-installed-p 'use-package))
     (progn
@@ -71,5 +75,14 @@
 (require 'haskell-modules)
 
 (global-set-key (kbd "C-c C-u") 'comment-or-uncomment-region)
+
+;; make backspace key work properly when running in a terminal
+(global-set-key (kbd "C-h") 'delete-backward-char)
+(global-set-key (kbd "C-M-h") 'backward-kill-word)
+
+;; Enable the wonders of Emacs client and server interaction
+(if (display-graphic-p)
+    (server-start))
+(put 'narrow-to-region 'disabled nil)
 
 ;;; init.el ends here
