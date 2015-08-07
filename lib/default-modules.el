@@ -1,9 +1,6 @@
 ;;; default-modules.el --- modules present for all modes
 ;;; Commentary:
 ;;; Code:
-(use-package evil
-  :config (evil-mode 1))
-
 (use-package magit
   :init (setq magit-last-seen-setup-instructions "1.4.0")
   :bind ("C-c g s" . magit-status))
