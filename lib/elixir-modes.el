@@ -1,4 +1,4 @@
-;;; elixir-modules.el --- elixir-lang configuration.
+;;; elixir-modes.el --- elixir-lang configuration.
 ;;; Commentary:
 ;;; Code:
 (defun elixir-modes ()
@@ -10,5 +10,5 @@
 
 (add-hook' elixir-mode-hook 'elixir-modes)
 
-(provide 'elixir-modules)
-;;; elixir-modules.el ends here
+(provide 'elixir-modes)
+;;; elixir-modes.el ends here

@@ -1,4 +1,4 @@
-;;; default-modules.el --- modules present for all modes
+;;; default-modes.el --- modules present for all modes
 ;;; Commentary:
 ;;; Code:
 (use-package magit
@@ -27,5 +27,5 @@
 (use-package paredit
   :config (paredit-mode t))
 
-(provide 'default-modules)
-;;; default-modules.el ends here
+(provide 'default-modes)
+;;; default-modes.el ends here

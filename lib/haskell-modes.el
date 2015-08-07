@@ -1,4 +1,4 @@
-;;; haskell-modules.el --- haskell configuration.
+;;; haskell-modes.el --- haskell configuration.
 ;;; Commentary:
 ;;; Code:
 (defun haskell-modes ()
@@ -8,5 +8,5 @@
 
 (add-hook' haskell-mode-hook 'haskell-modes)
 
-(provide 'haskell-modules)
-;;; haskell-modules.el ends here
+(provide 'haskell-modes)
+;;; haskell-modes.el ends here

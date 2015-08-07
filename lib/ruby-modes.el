@@ -1,4 +1,4 @@
-;;; ruby-modules.el --- ruby configuration.
+;;; ruby-modes.el --- ruby configuration.
 ;;; Commentary:
 ;;; Code:
 (defun ruby-modes ()
@@ -13,5 +13,5 @@
 
 (add-hook' ruby-mode-hook 'ruby-modes)
 
-(provide 'ruby-modules)
-;;; ruby-modules.el ends here
+(provide 'ruby-modes)
+;;; ruby-modes.el ends here
