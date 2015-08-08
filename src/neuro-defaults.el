@@ -21,18 +21,21 @@
 (use-package helm
   :config (helm-mode 1))
 
+(use-package smartparens
+  :config (require 'smartparens-config))
+
 (use-package helm-projectile
   :config (helm-projectile-on))
 
 (use-package paredit
   :config (paredit-mode t))
 
+(use-package cyberpunk-theme
+  :config (load-theme 'cyberpunk t))
+
 ;; Start in scratch buffer
 (setq inhibit-startup-screen t)
 (setq inhibit-splash-screen t)
-
-;; Use leuven, a fine built-in theme.
-(load-theme 'cyberpunk t)
 
 ;; Disable tool bar
 (tool-bar-mode -1)

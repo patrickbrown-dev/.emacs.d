@@ -1,4 +1,4 @@
-;;; neuro-elixir.el --- elixir-lang configuration.
+;;; neuro-elixir.el --- elixir configuration.
 ;;; Commentary:
 ;;; Code:
 (add-hook' elixir-mode-hook
