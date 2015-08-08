@@ -1,4 +1,4 @@
-;;; keybinds.el --- where the keybindings go I suppose.
+;;; neuro-keybinds.el --- where the keybindings go I suppose.
 ;;; Commentary:
 ;;; Code:
 
@@ -9,5 +9,5 @@
 (global-set-key (kbd "C-h") 'delete-backward-char)
 (global-set-key (kbd "C-M-h") 'backward-kill-word)
 
-(provide 'keybinds)
-;;; keybinds.el ends here
+(provide 'neuro-keybinds)
+;;; neuro-keybinds.el ends here

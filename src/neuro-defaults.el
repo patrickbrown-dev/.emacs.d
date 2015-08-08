@@ -1,13 +1,38 @@
-;;; sane-defaults.el --- settings for the sane.
+;;; neuro-defaults.el --- sane defaults for sane people.
 ;;; Commentary:
 ;;; Code:
+(use-package magit
+  :init (setq magit-last-seen-setup-instructions "1.4.0")
+  :bind ("C-c g s" . magit-status))
+
+(use-package projectile
+  :config (add-hook 'after-init-hook 'projectile-global-mode))
+
+(use-package company
+  :config (add-hook 'after-init-hook 'global-company-mode))
+
+(use-package flycheck
+  :config (add-hook 'after-init-hook 'global-flycheck-mode))
+
+(use-package flycheck-haskell
+  :config (eval-after-load 'flycheck
+            '(add-hook 'flycheck-mode-hook #'flycheck-haskell-setup)))
+
+(use-package helm
+  :config (helm-mode 1))
+
+(use-package helm-projectile
+  :config (helm-projectile-on))
+
+(use-package paredit
+  :config (paredit-mode t))
 
 ;; Start in scratch buffer
 (setq inhibit-startup-screen t)
 (setq inhibit-splash-screen t)
 
 ;; Use leuven, a fine built-in theme.
-(load-theme 'leuven t)
+(load-theme 'cyberpunk t)
 
 ;; Disable tool bar
 (tool-bar-mode -1)
@@ -31,6 +56,9 @@
 (setq auto-save-file-name-transforms
       `((".*" ,temporary-file-directory t)))
 
+;; Paren highlighting
+(show-paren-mode 1)
+
 ;; Whitespace
 (setq whitespace-style (quote (face trailing empty lines)))
 
@@ -42,5 +70,5 @@
                        "/sbin:"
                        (getenv "PATH")))
 
-(provide 'sane-defaults)
-;;; sane-defaults.el ends here
+(provide 'neuro-defaults)
+;;; neuro-defaults.el ends here
