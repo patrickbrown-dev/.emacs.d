@@ -1,4 +1,4 @@
-* Neuromancer - ptrckbrwn's .emacs.d
+* Neuromancer - an .emacs.d
 
 #+BEGIN_QUOTE
 Cyberspace. A consensual hallucination experienced daily by billions of legitimate
