@@ -1,5 +1,10 @@
-;;; init.el --- entry point to emacs config
+;;; init.el --- entry point to the neuromancer emacs cofiguration.
 ;;; Commentary:
+;;   _  _     __  _ _  _  _  _  _  _
+;;  / //_'/_///_// / //_|/ //_ /_'/
+;;
+;;  © 2015 Patrick Arthur Brown
+;;
 ;;; Code:
 
 ;; Melpa setup
