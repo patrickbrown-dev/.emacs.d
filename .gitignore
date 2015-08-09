@@ -1,6 +1,7 @@
 auto-save-list/
 elpa/
 eshell/
+url/
 projectile-bookmarks.eld
 secrets.el
 secrets.elc
