@@ -37,6 +37,10 @@
 (setq inhibit-startup-screen t)
 (setq inhibit-splash-screen t)
 
+;; Show line/column in footer
+(line-number-mode t)
+(column-number-mode t)
+
 ;; Disable tool bar
 (tool-bar-mode -1)
 
