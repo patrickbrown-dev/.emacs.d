@@ -6,8 +6,7 @@
              (use-package rspec-mode
                :config
                (add-hook 'after-init-hook 'inf-ruby-switch-setup)
-               (rspec-mode)
-               (ad-activate 'rspec-compile))
+               (rspec-mode))
              (use-package rvm)
              (whitespace-mode t)))
 

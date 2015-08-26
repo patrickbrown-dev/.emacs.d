@@ -30,8 +30,10 @@
 (use-package paredit
   :config (paredit-mode t))
 
-(use-package cyberpunk-theme
-  :config (load-theme 'cyberpunk t))
+;;(use-package cyberpunk-theme
+;;  :config (load-theme 'cyberpunk t))
+
+(load-theme 'leuven t)
 
 ;; Start in scratch buffer
 (setq inhibit-startup-screen t)
@@ -66,8 +68,14 @@
 ;; Paren highlighting
 (show-paren-mode 1)
 
+;; Highlight Line
+(global-hl-line-mode t)
+
 ;; Whitespace
-(setq whitespace-style (quote (face trailing empty lines)))
+(setq whitespace-style (quote (face trailing empty lines-tail indentation)))
+
+;; Delete trailing whitespace
+(add-hook 'before-save-hook 'delete-trailing-whitespace)
 
 ;; Eshell
 (setenv "PATH" (concat "/usr/local/bin:"
