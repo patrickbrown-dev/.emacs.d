@@ -35,6 +35,8 @@
 
 (load-theme 'leuven t)
 
+(add-to-list 'default-frame-alist '(font . "Ubuntu Mono-14" ))
+
 ;; Start in scratch buffer
 (setq inhibit-startup-screen t)
 (setq inhibit-splash-screen t)

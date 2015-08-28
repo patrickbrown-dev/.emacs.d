@@ -3,7 +3,7 @@
 ;;   _  _     __  _ _  _  _  _  _  _
 ;;  / //_'/_///_// / //_|/ //_ /_'/
 ;;
-;;  © 2015 Patrick Arthur Brown
+;;  © 2015 Patrick Arthur Brown, All Rights Reserved
 ;;
 ;;; Code:
 
@@ -36,6 +36,7 @@
 (require 'neuro-elixir)
 (require 'neuro-haskell)
 (require 'neuro-javascript)
+(require 'neuro-rust)
 
 ;; Enable the wonders of Emacs client and server interaction
 (if (display-graphic-p) (server-start))
