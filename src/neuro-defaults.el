@@ -33,9 +33,10 @@
 ;;(use-package cyberpunk-theme
 ;;  :config (load-theme 'cyberpunk t))
 
-(load-theme 'leuven t)
+(when (display-graphic-p)
+  (load-theme 'leuven t))
 
-(add-to-list 'default-frame-alist '(font . "Ubuntu Mono-14" ))
+(add-to-list 'default-frame-alist '(font . "Hack-12" ))
 
 ;; Start in scratch buffer
 (setq inhibit-startup-screen t)
@@ -48,11 +49,13 @@
 ;; Disable tool bar
 (tool-bar-mode -1)
 
-;; Disable scroll bar
-(scroll-bar-mode -1)
+;; Only disable scrollbar for graphic mode
+(when (display-graphic-p)
+  (scroll-bar-mode -1))
 
-;; Disable menu bar in CLI mode
+;; Disable and menu bar in CLI mode
 (when (not (display-graphic-p))
+
   (menu-bar-mode -1))
 
 ;; No tabs, ever
@@ -71,7 +74,8 @@
 (show-paren-mode 1)
 
 ;; Highlight Line
-(global-hl-line-mode t)
+(when (display-graphic-p)
+  (global-hl-line-mode t))
 
 ;; Whitespace
 (setq whitespace-style (quote (face trailing empty lines-tail indentation)))
