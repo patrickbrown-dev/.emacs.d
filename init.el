@@ -16,6 +16,8 @@
 
 (package-initialize)
 
+(setq ispell-program-name "/usr/local/bin/ispell")
+
 ;; Install use-package if doesn't exist.
 (if (not (package-installed-p 'use-package))
     (progn
