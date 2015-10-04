@@ -6,6 +6,7 @@
              (use-package elixir-mode)
              (use-package alchemist
                :config (alchemist-mode t))
+             (linum-mode t)
              (whitespace-mode t)))
 
 (provide 'neuro-elixir)
