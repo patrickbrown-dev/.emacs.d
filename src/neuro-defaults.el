@@ -30,11 +30,11 @@
 (use-package paredit
   :config (paredit-mode t))
 
-;;(use-package cyberpunk-theme
-;;  :config (load-theme 'cyberpunk t))
+(use-package cyberpunk-theme
+  :config (load-theme 'cyberpunk t))
 
-(when (display-graphic-p)
-  (load-theme 'leuven t))
+;;(when (display-graphic-p)
+;;  (load-theme 'leuven t))
 
 (add-to-list 'default-frame-alist '(font . "Hack-12" ))
 
