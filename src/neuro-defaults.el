@@ -42,6 +42,9 @@
 (setq inhibit-startup-screen t)
 (setq inhibit-splash-screen t)
 
+;; Set journal directory
+(setq org-journal-dir "~/org/journal/")
+
 ;; Show line/column in footer
 (line-number-mode t)
 (column-number-mode t)
