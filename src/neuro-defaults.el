@@ -55,7 +55,6 @@
 
 ;; Disable and menu bar in CLI mode
 (when (not (display-graphic-p))
-
   (menu-bar-mode -1))
 
 ;; No tabs, ever
