@@ -4,5 +4,7 @@ eshell/
 url/
 projectile-bookmarks.eld
 secrets.el
+custom.el
+custom.elc
 secrets.elc
 abbrev_defs
