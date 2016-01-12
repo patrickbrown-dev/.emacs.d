@@ -15,7 +15,7 @@
 (use-package flycheck
   :config (add-hook 'after-init-hook 'global-flycheck-mode))
 
-(use-package ivy-mode
+(use-package ivy
   :config (lambda ()
             (ivy-mode 1)
             (setq ivy-use-virtual-buffers t)))
