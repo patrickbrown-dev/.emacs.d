@@ -1,33 +1,45 @@
 ;;; neuro-defaults.el --- sane defaults for sane people.
 ;;; Commentary:
 ;;; Code:
+(require-package 'magit)
 (use-package magit
   :init (setq magit-last-seen-setup-instructions "1.4.0")
-  :bind ("C-c g s" . magit-status))
+  :bind ("C-c C-s" . magit-status))
 
-(use-package evil-magit
-  :init (require 'evil-magit)
-  :config (setq evil-magit-state 'normal))
-
+(require-package 'company)
 (use-package company
   :config (add-hook 'after-init-hook 'global-company-mode))
 
+(require-package 'flycheck)
 (use-package flycheck
   :config (add-hook 'after-init-hook 'global-flycheck-mode))
 
+(require-package 'counsel)
 (use-package ivy
   :config (lambda ()
             (ivy-mode 1)
             (setq ivy-use-virtual-buffers t)))
 
+(require-package 'smartparens)
 (use-package smartparens
   :config (require 'smartparens-config))
 
+(require-package 'paredit)
 (use-package paredit
   :config (paredit-mode t))
 
-(use-package evil
-  :config (evil-mode 1))
+(require-package 'god-mode)
+(use-package god-mode
+  :bind
+  ("<escape>" . god-local-mode)
+
+  :config
+  (defun my-update-cursor ()
+    (setq cursor-type (if (or god-local-mode buffer-read-only)
+                          'box
+                        'bar)))
+  (add-hook 'god-mode-enabled-hook 'my-update-cursor)
+  (add-hook 'god-mode-disabled-hook 'my-update-cursor))
 
 (add-to-list 'default-frame-alist '(font . "Hack-12" ))
 

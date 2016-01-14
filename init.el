@@ -18,12 +18,14 @@
 
 (setq ispell-program-name "/usr/local/bin/ispell")
 
-;; Install use-package if doesn't exist.
-(if (not (package-installed-p 'use-package))
+(defun require-package (pkg)
+  (if (not (package-installed-p pkg))
     (progn
       (package-refresh-contents)
-      (package-install 'use-package)))
-(require 'use-package)
+      (package-install pkg)))
+  (require pkg))
+
+(require-package 'use-package)
 
 ;; Load path
 (setq load-path (cons "~/.emacs.d/src" load-path))
