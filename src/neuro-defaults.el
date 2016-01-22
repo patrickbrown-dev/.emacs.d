@@ -4,7 +4,7 @@
 (require-package 'magit)
 (use-package magit
   :init (setq magit-last-seen-setup-instructions "1.4.0")
-  :bind ("C-c C-s" . magit-status))
+  :bind ("C-c g s" . magit-status))
 
 (require-package 'company)
 (use-package company
@@ -28,24 +28,11 @@
 (use-package paredit
   :config (paredit-mode t))
 
-(require-package 'god-mode)
-(use-package god-mode
-  :bind
-  ("<escape>" . god-local-mode)
-
-  :config
-  (defun my-update-cursor ()
-    (setq cursor-type (if (or god-local-mode buffer-read-only)
-                          'box
-                        'bar)))
-  (add-hook 'god-mode-enabled-hook 'my-update-cursor)
-  (add-hook 'god-mode-disabled-hook 'my-update-cursor))
-
-(add-to-list 'default-frame-alist '(font . "Hack-12" ))
+;; (add-to-list 'default-frame-alist '(font . "Menlo-14" ))
 
 ;; Start in scratch buffer
-(setq inhibit-startup-screen t)
-(setq inhibit-splash-screen t)
+;; (setq inhibit-startup-screen t)
+;; (setq inhibit-splash-screen t)
 
 ;; Set journal directory
 (setq org-journal-dir "~/org/journal/")
@@ -77,6 +64,12 @@
 
 ;; Delete trailing whitespace
 (add-hook 'before-save-hook 'delete-trailing-whitespace)
+
+;; OS X command as meta
+(setq mac-option-key-is-meta nil)
+(setq mac-command-key-is-meta t)
+(setq mac-command-modifier 'meta)
+(setq mac-option-modifier nil)
 
 ;; Eshell
 (setenv "PATH" (concat "/usr/local/bin:"

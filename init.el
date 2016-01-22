@@ -19,6 +19,7 @@
 (setq ispell-program-name "/usr/local/bin/ispell")
 
 (defun require-package (pkg)
+  "If PKG isn't installed, check melpa and install it."
   (if (not (package-installed-p pkg))
     (progn
       (package-refresh-contents)
@@ -41,12 +42,10 @@
 (require 'neuro-defaults)
 (if (display-graphic-p)
     (require 'neuro-gui)
-   (require 'neuro-cli))
+  (require 'neuro-cli))
 (require 'neuro-keybinds)
 (require 'neuro-ruby)
+(require 'neuro-java)
 (require 'neuro-elixir)
-(require 'neuro-haskell)
-(require 'neuro-javascript)
-(require 'neuro-rust)
 
 ;;; init.el ends here

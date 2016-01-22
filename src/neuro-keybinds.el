@@ -18,10 +18,10 @@
 (global-set-key (kbd "<f1> l") 'counsel-load-library)
 (global-set-key (kbd "<f2> i") 'counsel-info-lookup-symbol)
 (global-set-key (kbd "<f2> u") 'counsel-unicode-char)
-(global-set-key (kbd "C-c C-j") 'counsel-git-grep)
-(global-set-key (kbd "C-c C-f") 'counsel-git)
-(global-set-key (kbd "C-c C-k") 'counsel-ag)
-(global-set-key (kbd "C-x C-l") 'counsel-locate)
+(global-set-key (kbd "C-c j") 'counsel-git-grep)
+(global-set-key (kbd "C-c f") 'counsel-git)
+(global-set-key (kbd "C-c k") 'counsel-ag)
+(global-set-key (kbd "C-x l") 'counsel-locate)
 
 (provide 'neuro-keybinds)
 ;;; neuro-keybinds.el ends here
