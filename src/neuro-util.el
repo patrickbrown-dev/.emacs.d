@@ -19,12 +19,5 @@
     (`1 1)
     (n (+ (fib (- n 2)) (fib (- n 1))))))
 
-(defun test ()
-  "Nested."
-  (defun nested ()
-    "Nested defun."
-    "this was a tested defun")
-  "so was this")
-
 (provide 'neuro-util)
 ;;; neuro-util ends here
