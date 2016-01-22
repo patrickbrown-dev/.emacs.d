@@ -1,13 +1,12 @@
 ;;; init.el --- entry point to the neuromancer emacs cofiguration.
+;;;
 ;;; Commentary:
-;;   _  _     __  _ _  _  _  _  _  _
-;;  / //_'/_///_// / //_|/ //_ /_'/
-;;
-;;  © 2015 Patrick Arthur Brown, All Rights Reserved
-;;
+;;;  _  _     __  _ _  _  _  _  _  _
+;;; / //_'/_///_// / //_|/ //_ /_'/
+;;;
+;;; Copyright (C) 2016 Patrick Arthur Brown
+;;;
 ;;; Code:
-
-;; Melpa setup
 (require 'package)
 (add-to-list 'package-archives
 	     '("melpa" . "http://melpa.org/packages/") t)
@@ -47,5 +46,4 @@
 (require 'neuro-ruby)
 (require 'neuro-java)
 (require 'neuro-elixir)
-
 ;;; init.el ends here
