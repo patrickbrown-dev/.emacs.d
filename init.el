@@ -46,4 +46,5 @@
 (require 'neuro-ruby)
 (require 'neuro-java)
 (require 'neuro-elixir)
+(require 'neuro-haskell)
 ;;; init.el ends here
