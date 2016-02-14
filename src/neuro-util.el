@@ -19,5 +19,22 @@
     (`1 1)
     (n (+ (fib (- n 2)) (fib (- n 1))))))
 
+(defun counsel-bash-history ()
+  "Yank the bash history"
+  (interactive)
+  (let (hist-cmd collection val)
+    (shell-command "history -r") ; reload history
+    (setq collection
+          (nreverse
+           (split-string (with-temp-buffer (insert-file-contents (file-truename "~/.bash_history"))
+                                           (buffer-string))
+                         "\n"
+                         t)))
+    (when (and collection (> (length collection) 0)
+               (setq val (if (= 1 (length collection)) (car collection)
+                           (ivy-read (format "Bash history:") collection))))
+      (kill-new val)
+      (message "%s => kill-ring" val))))
+
 (provide 'neuro-util)
 ;;; neuro-util ends here

@@ -77,6 +77,7 @@
                        "/bin:"
                        "/usr/sbin:"
                        "/sbin:"
+                       "/usr/local/texlive/2015/bin/x86_64-darwin:"
                        (getenv "PATH")))
 
 (provide 'neuro-defaults)
