@@ -1,4 +1,4 @@
-;;; neuro-java.el --- java configuration.
+;;; pb-java.el --- java configuration.
 ;;; Commentary:
 ;;; Code:
 (require-package 'jdee)
@@ -6,5 +6,5 @@
            (lambda ()
              (use-package jdee)))
 
-(provide 'neuro-java)
-;;; neuro-java.el ends here
+(provide 'pb-java)
+;;; pb-java.el ends here

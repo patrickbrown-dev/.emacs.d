@@ -1,4 +1,4 @@
-;;; neuro-defaults.el --- sane defaults for sane people.
+;;; pb-defaults.el --- global default settings.
 ;;; Commentary:
 ;;; Code:
 (require-package 'magit)
@@ -28,11 +28,9 @@
 (use-package paredit
   :config (paredit-mode t))
 
-;; (add-to-list 'default-frame-alist '(font . "Menlo-14" ))
-
 ;; Start in scratch buffer
-;; (setq inhibit-startup-screen t)
-;; (setq inhibit-splash-screen t)
+(setq inhibit-startup-screen t)
+(setq inhibit-splash-screen t)
 
 ;; Set journal directory
 (setq org-journal-dir "~/org/journal/")
@@ -80,5 +78,5 @@
                        "/usr/local/texlive/2015/bin/x86_64-darwin:"
                        (getenv "PATH")))
 
-(provide 'neuro-defaults)
-;;; neuro-defaults.el ends here
+(provide 'pb-defaults)
+;;; pb-defaults.el ends here

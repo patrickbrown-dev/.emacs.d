@@ -28,7 +28,7 @@
 (require-package 'use-package)
 
 ;; Load path
-(setq load-path (cons "~/.emacs.d/src" load-path))
+(setq load-path (cons "~/.emacs.d/lib" load-path))
 
 ;; Secrets
 (if (file-exists-p "~/.emacs.d/secrets.el")
@@ -38,15 +38,15 @@
 (setq custom-file "~/.emacs.d/custom.el")
 (load custom-file)
 
-(require 'neuro-defaults)
+(require 'pb-defaults)
 (if (display-graphic-p)
-    (require 'neuro-gui)
-  (require 'neuro-cli))
-(require 'neuro-keybinds)
-(require 'neuro-ruby)
-(require 'neuro-java)
-(require 'neuro-elixir)
-(require 'neuro-haskell)
-(require 'neuro-rust)
-(require 'neuro-util)
+    (require 'pb-gui)
+  (require 'pb-cli))
+(require 'pb-keybinds)
+(require 'pb-ruby)
+(require 'pb-java)
+(require 'pb-elixir)
+(require 'pb-haskell)
+(require 'pb-rust)
+(require 'pb-util)
 ;;; init.el ends here

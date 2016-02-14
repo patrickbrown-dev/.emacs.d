@@ -1,4 +1,4 @@
-;;; neuro-rust.el --- rust configuration.
+;;; pb-rust.el --- rust configuration.
 ;;; Commentary:
 ;;; Code:
 (add-hook' rust-mode-hook
@@ -17,5 +17,5 @@
              (setq company-tooltip-align-annotations t)
              (whitespace-mode t)))
 
- (provide 'neuro-rust)
-;;; neuro-rust.el ends here
+ (provide 'pb-rust)
+;;; pb-rust.el ends here

@@ -1,4 +1,4 @@
-;;; neuro-keybinds.el --- where the keybindings go I suppose.
+;;; pb-keybinds.el --- where the keybindings go I suppose.
 ;;; Commentary:
 ;;; Code:
 
@@ -23,5 +23,5 @@
 (global-set-key (kbd "C-c k") 'counsel-ag)
 (global-set-key (kbd "C-x l") 'counsel-locate)
 
-(provide 'neuro-keybinds)
-;;; neuro-keybinds.el ends here
+(provide 'pb-keybinds)
+;;; pb-keybinds.el ends here

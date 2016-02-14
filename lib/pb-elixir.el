@@ -1,4 +1,4 @@
-;;; neuro-elixir.el --- elixir configuration
+;;; pb-elixir.el --- elixir configuration
 ;;;
 ;;; Commentary:
 ;;; Copyright (C) 2016 Patrick Arthur Brown
@@ -15,5 +15,5 @@
                :config (alchemist-mode t))
              (whitespace-mode t)))
 
-(provide 'neuro-elixir)
-;;; neuro-elixir.el ends here
+(provide 'pb-elixir)
+;;; pb-elixir.el ends here

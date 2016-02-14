@@ -1,4 +1,4 @@
-;;; neuro-javascript.el --- javascript configuration.
+;;; pb-javascript.el --- javascript configuration.
 ;;; Commentary:
 ;;; Code:
 (add-hook' javascript-mode-hook
@@ -11,5 +11,5 @@
                      ad-do-it)
                  ad-do-it))))
 
-(provide 'neuro-javascript)
-;;; neuro-javascript.el ends here
+(provide 'pb-javascript)
+;;; pb-javascript.el ends here

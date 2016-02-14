@@ -1,4 +1,4 @@
-;;; neuro-util.el --- some utility functions
+;;; pb-util.el --- some utility functions
 ;;;
 ;;; Commentary:
 ;;; Copyright (C) 2016 by Patrick Arthur Brown
@@ -36,5 +36,5 @@
       (kill-new val)
       (message "%s => kill-ring" val))))
 
-(provide 'neuro-util)
-;;; neuro-util ends here
+(provide 'pb-util)
+;;; pb-util ends here

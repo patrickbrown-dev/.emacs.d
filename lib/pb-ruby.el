@@ -1,4 +1,4 @@
-;;; neuro-ruby.el --- ruby configuration.
+;;; pb-ruby.el --- ruby configuration.
 ;;;
 ;;; Commentary:
 ;;; Copyright (C) 2016 by Patrick Arthur Brown
@@ -21,5 +21,5 @@
      (interactive)
      (multi-occur (list (current-buffer)) "^\s+\\(it\\\|describe\\\|context\\)"))))
 
-(provide 'neuro-ruby)
-;;; neuro-ruby.el ends here
+(provide 'pb-ruby)
+;;; pb-ruby.el ends here

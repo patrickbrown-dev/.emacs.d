@@ -1,4 +1,4 @@
-;;; neuro-gui --- Defaults for Emacs in GUI mode
+;;; pb-gui --- Defaults for Emacs in GUI mode
 ;;; Commentary:
 ;;; Code:
 ;; Enable the wonders of Emacs client and server interaction
@@ -13,5 +13,5 @@
 ;; Highlight the current line
 (global-hl-line-mode t)
 
-(provide 'neuro-gui)
-;;; neuro-gui ends here
+(provide 'pb-gui)
+;;; pb-gui ends here
