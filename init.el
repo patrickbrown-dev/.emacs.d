@@ -9,7 +9,7 @@
 ;;; Code:
 (require 'package)
 (add-to-list 'package-archives
-	     '("melpa" . "http://melpa.org/packages/") t)
+             '("melpa" . "http://melpa.org/packages/") t)
 (when (< emacs-major-version 24)
   (add-to-list 'package-archives '("gnu" . "http://elpa.gnu.org/packages/")))
 
@@ -19,10 +19,10 @@
 
 (defun require-package (pkg)
   "If PKG isn't installed, check melpa and install it."
-  (if (not (package-installed-p pkg))
-    (progn
-      (package-refresh-contents)
-      (package-install pkg)))
+  (when (not (package-installed-p pkg))
+      (progn
+        (package-refresh-contents)
+        (package-install pkg)))
   (require pkg))
 
 (require-package 'use-package)
@@ -31,8 +31,8 @@
 (setq load-path (cons "~/.emacs.d/lib" load-path))
 
 ;; Secrets
-(if (file-exists-p "~/.emacs.d/secrets.el")
-    (load "~/.emacs.d/secrets"))
+(when (file-exists-p "~/.emacs.d/secrets.el")
+  (load "~/.emacs.d/secrets"))
 
 ;; Customization file
 (setq custom-file "~/.emacs.d/custom.el")
