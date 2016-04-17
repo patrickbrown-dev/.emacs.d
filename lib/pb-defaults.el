@@ -20,6 +20,17 @@
             (ivy-mode 1)
             (setq ivy-use-virtual-buffers t)))
 
+(require-package 'evil)
+(use-package evil-mode
+  :init (evil-mode 1))
+
+(require-package 'evil-magit)
+(use-package evil-magit)
+
+(require-package 'evil-surround)
+(use-package evil-surround
+  :init (global-evil-surround-mode 1))
+
 (require-package 'smartparens)
 (use-package smartparens
   :config (require 'smartparens-config))
