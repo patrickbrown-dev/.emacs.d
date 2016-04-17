@@ -44,7 +44,6 @@
   (require 'pb-cli))
 (require 'pb-keybinds)
 (require 'pb-ruby)
-(require 'pb-java)
 (require 'pb-elixir)
 (require 'pb-haskell)
 (require 'pb-rust)
