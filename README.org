@@ -7,7 +7,7 @@ concepts... A graphic representation of data abstracted from banks of every
 computer in the human system. Unthinkable complexity. Lines of light ranged in
 the nonspace of the mind, clusters and constellations of data. Like city
 lights, receding...
-― William Gibson, /Neuromancer/
+--- William Gibson, /Neuromancer/
 #+END_QUOTE
 
 #+BEGIN_QUOTE
@@ -18,5 +18,5 @@ even if they were in the middle of a desert, they would take their saddle with
 them. The horse was a consumable good, but the saddle was an interface that
 their bodies had gotten used to. In the same vein, PCs are consumable goods,
 while keyboards are important interfaces."
-- Professor Eiiti Wada
+--- Professor Eiiti Wada
 #+END_QUOTE
