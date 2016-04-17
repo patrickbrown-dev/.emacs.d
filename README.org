@@ -1,7 +1,5 @@
 * An .emacs.d
 
-** Some reminders...
-
 #+BEGIN_QUOTE
 Cyberspace. A consensual hallucination experienced daily by billions of
 legitimate operators, in every nation, by children being taught mathematical
@@ -12,6 +10,8 @@ lights, receding...
 #+END_QUOTE
 
 --- William Gibson, /Neuromancer/
+
+-----
 
 #+BEGIN_QUOTE
 Because keyboards are accessories to PC makers, they focus on minimizing the
