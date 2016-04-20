@@ -19,10 +19,10 @@
 
 (defun require-package (pkg)
   "If PKG isn't installed, check melpa and install it."
-  (when (not (package-installed-p pkg))
-      (progn
-        (package-refresh-contents)
-        (package-install pkg)))
+  (unless (package-installed-p pkg)
+    (progn
+      (package-refresh-contents)
+      (package-install pkg)))
   (require pkg))
 
 (require-package 'use-package)
@@ -44,6 +44,7 @@
   (require 'pb-cli))
 (require 'pb-keybinds)
 (require 'pb-ruby)
+(require 'pb-python)
 (require 'pb-elixir)
 (require 'pb-haskell)
 (require 'pb-rust)
