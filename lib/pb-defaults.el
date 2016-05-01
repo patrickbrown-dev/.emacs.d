@@ -39,6 +39,9 @@
 (line-number-mode t)
 (column-number-mode t)
 
+;; Use ssh for tramp
+(setq tramp-default-method "ssh")
+
 ;; Disable tool bar
 (tool-bar-mode -1)
 

@@ -12,7 +12,6 @@
      :config
      (add-hook 'after-init-hook 'inf-ruby-switch-setup)
      (defadvice rspec-compile (around rspec-compile-around)
-       "Use BASH shell for running the specs because of ZSH issues."
        (let ((shell-file-name "/bin/bash"))
          ad-do-it))
 
@@ -21,6 +20,10 @@
 
    (require-package 'rvm)
    (use-package rvm)
+
+   (require-package 'nlinum)
+   (use-package nlinum
+     :config (nlinum-mode t))
 
    (require-package 'ruby-refactor)
    (use-package ruby-refactor

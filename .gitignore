@@ -9,3 +9,4 @@ custom.el
 custom.elc
 secrets.elc
 abbrev_defs
+tramp

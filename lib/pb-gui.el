@@ -5,8 +5,7 @@
 (server-start)
 
 ;; Use leuven theme
-(require-package 'material-theme)
-(load-theme 'material t)
+(load-theme 'leuven t)
 
 ;; No scroll-bars
 (scroll-bar-mode -1)
