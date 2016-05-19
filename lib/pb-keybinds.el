@@ -19,7 +19,7 @@
 (global-set-key (kbd "C-c g g") 'counsel-git-grep)
 (global-set-key (kbd "C-c f") 'counsel-git)
 (global-set-key (kbd "C-c a g") 'counsel-ag)
-(global-set-key (kbd "C-c j") 'pb-util-top-join-line)
+(global-set-key (kbd "C-c C-j") 'pb-util-top-join-line)
 (global-set-key (kbd "<f1> f") 'counsel-describe-function)
 (global-set-key (kbd "<f1> v") 'counsel-describe-variable)
 (global-set-key (kbd "<f1> l") 'counsel-load-library)
