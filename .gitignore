@@ -3,6 +3,7 @@ elpa/
 eshell/
 url/
 semanticdb/
+.python-environments/
 projectile-bookmarks.eld
 secrets.el
 custom.el
@@ -10,3 +11,5 @@ custom.elc
 secrets.elc
 abbrev_defs
 tramp
+ac-comphist.dat
+session.*
