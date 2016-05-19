@@ -39,6 +39,7 @@
 (load custom-file)
 
 (require 'pb-defaults)
+(require 'pb-util)
 (if (display-graphic-p)
     (require 'pb-gui)
   (require 'pb-cli))
@@ -48,5 +49,5 @@
 (require 'pb-elixir)
 (require 'pb-haskell)
 (require 'pb-rust)
-(require 'pb-util)
+
 ;;; init.el ends here
