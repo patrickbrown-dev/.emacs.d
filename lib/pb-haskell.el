@@ -3,9 +3,8 @@
 ;;; Code:
 (add-hook' haskell-mode-hook
            (lambda ()
-             (use-package haskell-mode)
              (require 'intero)
-             (nlinum-mode t)
+             (intero-mode)
              (whitespace-mode t)))
 
 (provide 'pb-haskell)
