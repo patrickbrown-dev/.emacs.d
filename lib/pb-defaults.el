@@ -72,14 +72,9 @@
 (setq mac-command-modifier 'meta)
 (setq mac-option-modifier nil)
 
-;; Eshell
-(setenv "PATH" (concat "/usr/local/bin:"
-                       "/usr/bin:"
-                       "/bin:"
-                       "/usr/sbin:"
-                       "/sbin:"
-                       "/usr/local/texlive/2015/bin/x86_64-darwin:"
-                       (getenv "PATH")))
+(require-package 'exec-path-from-shell)
+(when (memq window-system '(mac ns))
+  (exec-path-from-shell-initialize))
 
 (provide 'pb-defaults)
 ;;; pb-defaults.el ends here
