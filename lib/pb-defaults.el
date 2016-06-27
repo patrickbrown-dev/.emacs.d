@@ -1,39 +1,40 @@
 ;;; pb-defaults.el --- global default settings.
+;;;
 ;;; Commentary:
+;;; 2016 (c) Patrick Arthur Brown
+;;;
 ;;; Code:
-(require-package 'magit)
+
 (use-package magit
+  :ensure t
   :init (setq magit-last-seen-setup-instructions "1.4.0")
   :bind ("C-c g s" . magit-status))
 
-(require-package 'company)
 (use-package company
+  :ensure t
   :config (add-hook 'after-init-hook 'global-company-mode))
 
-(require-package 'flycheck)
 (use-package flycheck
+  :ensure t
   :config (add-hook 'after-init-hook 'global-flycheck-mode))
 
-(require-package 'counsel)
 (use-package ivy
+  :ensure counsel
+  :bind (("C-c C-r" . ivy-resume)
+         ("M-x" . counsel-M-x)
+         ("\C-s" . swiper)
+         ("C-x C-f" . counsel-find-file)
+         ("C-x l" . counsel-locate)
+         ("C-c f" . counsel-git)
+         ("C-c g g" . counsel-git-grep)
+         ("C-c a g" . counsel-ag))
   :config (lambda ()
             (ivy-mode 1)
             (setq ivy-use-virtual-buffers t)))
 
-(require-package 'smartparens)
-(use-package smartparens
-  :config (require 'smartparens-config))
-
-(require-package 'paredit)
-(use-package paredit
-  :config (paredit-mode t))
-
 ;; Start in scratch buffer
 (setq inhibit-startup-screen t)
 (setq inhibit-splash-screen t)
-
-;; Set journal directory
-(setq org-journal-dir "~/org/journal/")
 
 ;; Show line/column in footer
 (line-number-mode t)
@@ -72,9 +73,10 @@
 (setq mac-command-modifier 'meta)
 (setq mac-option-modifier nil)
 
-(require-package 'exec-path-from-shell)
-(when (memq window-system '(mac ns))
-  (exec-path-from-shell-initialize))
+(use-package exec-path-from-shell
+  :ensure t
+  :if (memq window-system '(mac ns))
+  :config (exec-path-from-shell-initialize))
 
 (provide 'pb-defaults)
 ;;; pb-defaults.el ends here

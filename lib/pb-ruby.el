@@ -7,8 +7,8 @@
 (add-hook'
  ruby-mode-hook
  (lambda ()
-   (require-package 'rspec-mode)
    (use-package rspec-mode
+     :ensure t
      :config
      (add-hook 'after-init-hook 'inf-ruby-switch-setup)
      (defadvice rspec-compile (around rspec-compile-around)
@@ -18,15 +18,11 @@
      (ad-activate 'rspec-compile)
      (rspec-mode))
 
-   (require-package 'rvm)
-   (use-package rvm)
+   (use-package rvm
+     :ensure t)
 
-   (require-package 'nlinum)
-   (use-package nlinum
-     :config (nlinum-mode t))
-
-   (require-package 'ruby-refactor)
    (use-package ruby-refactor
+     :ensure t
      :config
      (setq ruby-refactor-add-parens t)
      (ruby-refactor-mode-launch))

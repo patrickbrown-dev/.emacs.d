@@ -11,12 +11,6 @@
 (add-hook'
  python-mode-hook
  (lambda ()
-   (jedi:setup)
-   (setq jedi:complete-on-dot t)
-   (package-initialize)
-   (elpy-enable)
-
-   (setq elpy-rpc-backend "jedi")
    (whitespace-mode t)))
 
 (provide 'pb-python)

@@ -17,15 +17,12 @@
 
 (setq ispell-program-name "/usr/local/bin/ispell")
 
-(defun require-package (pkg)
-  "If PKG isn't installed, check melpa and install it."
-  (unless (package-installed-p pkg)
-    (progn
-      (package-refresh-contents)
-      (package-install pkg)))
-  (require pkg))
+(unless (package-installed-p 'use-package)
+  (progn
+    (package-refresh-contents)
+    (package-install 'use-package)))
 
-(require-package 'use-package)
+(require 'use-package)
 
 ;; Load path
 (setq load-path (cons "~/.emacs.d/lib" load-path))
