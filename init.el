@@ -41,6 +41,7 @@
     (require 'pb-gui)
   (require 'pb-cli))
 (require 'pb-keybinds)
+(require 'pb-go)
 (require 'pb-ruby)
 (require 'pb-python)
 (require 'pb-elixir)
