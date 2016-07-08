@@ -1,4 +1,4 @@
-;;; pb-defaults.el --- global default settings.
+;;; pb-defaults.el --- global default settings
 ;;;
 ;;; Commentary:
 ;;; 2016 (c) Patrick Arthur Brown
@@ -12,7 +12,13 @@
 
 (use-package company
   :ensure t
-  :config (add-hook 'after-init-hook 'global-company-mode))
+  :init
+  (setq company-tooltip-limit 20)
+  (setq company-idle-delay .3)
+  (setq company-echo-delay 0)
+  (setq company-begin-commands '(self-insert-command))
+  :config
+  (add-hook 'after-init-hook 'global-company-mode))
 
 (use-package flycheck
   :ensure t

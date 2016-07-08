@@ -15,6 +15,12 @@
 (add-hook' go-mode-hook
            (lambda ()
              (add-hook 'before-save-hook 'gofmt-before-save)
+
+             (use-package company-go
+               :ensure t
+               :config
+               (set (make-local-variable 'company-backends) '(company-go)))
+
              (use-package nlinum
                :ensure t
                :config (nlinum-mode))))
