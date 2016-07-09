@@ -10,7 +10,10 @@
                  (concat (getenv "GOPATH") "/bin")
                  exec-path))
 
-(use-package go-mode :ensure t)
+(use-package go-mode
+  :ensure t
+  :bind (("C-c d j" . godef-jump)
+         ("C-c d d" . godef-describe)))
 
 (add-hook' go-mode-hook
            (lambda ()
