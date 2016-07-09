@@ -10,5 +10,7 @@
 ;; Highlight the current line
 (global-hl-line-mode t)
 
+(require 'acme-mouse)
+
 (provide 'pb-gui)
 ;;; pb-gui ends here
