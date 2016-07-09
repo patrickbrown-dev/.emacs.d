@@ -4,9 +4,6 @@
 ;; Enable the wonders of Emacs client and server interaction
 (server-start)
 
-;; Use leuven theme
-(load-theme 'leuven t)
-
 ;; No scroll-bars
 (scroll-bar-mode -1)
 
