@@ -18,6 +18,10 @@
      (ad-activate 'rspec-compile)
      (rspec-mode))
 
+   (use-package nlinum
+     :ensure t
+     :config (nlinum-mode))
+
    (use-package rvm
      :ensure t)
 
