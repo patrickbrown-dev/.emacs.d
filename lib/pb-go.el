@@ -5,10 +5,7 @@
 ;;;
 ;;; Code:
 
-(setenv "GOPATH" (getenv "GOPATH"))
-(setq exec-path (cons
-                 (concat (getenv "GOPATH") "/bin")
-                 exec-path))
+(setenv "GOPATH" (substitute-in-file-name "$HOME"))
 
 (use-package go-mode
   :ensure t
