@@ -25,7 +25,7 @@
 (require 'use-package)
 
 ;; Load path
-(setq load-path (cons "~/.emacs.d/lib" load-path))
+(add-to-list 'load-path "~/.emacs.d/lib")
 
 ;; Secrets
 (when (file-exists-p "~/.emacs.d/secrets.el")
@@ -47,5 +47,6 @@
 (require 'pb-elixir)
 (require 'pb-haskell)
 (require 'pb-rust)
+(require 'acme-mouse)
 
 ;;; init.el ends here
