@@ -1,0 +1,2 @@
+#+TITLE: .emacs.d
+#+AUTHOR: Patrick Arthur Brown <pat@pab.io>
