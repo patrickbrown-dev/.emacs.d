@@ -38,6 +38,10 @@
             (ivy-mode 1)
             (setq ivy-use-virtual-buffers t)))
 
+(use-package etags-select
+  :ensure t
+  :bind (("C-c ." . etags-select-find-tag-at-point)))
+
 ;; Start in scratch buffer
 (setq inhibit-startup-screen t)
 (setq inhibit-splash-screen t)

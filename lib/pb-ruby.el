@@ -36,7 +36,9 @@
    (defun rspec-outline ()
      "Opens a buffer with rspec outline."
      (interactive)
-     (multi-occur (list (current-buffer)) "^\s+\\(it\\\|describe\\\|context\\)"))))
+     (multi-occur (list (current-buffer)) "^\s+\\(it\\\|describe\\\|context\\)"))
+
+   (pb-set-tags-file-path)))
 
 (provide 'pb-ruby)
 ;;; pb-ruby.el ends here
