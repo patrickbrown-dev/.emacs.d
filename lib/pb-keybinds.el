@@ -1,7 +1,10 @@
-;;; pb-keybinds.el --- where the keybindings go I suppose.
+;;; pb-keybinds.el --- global keybindings.
 ;;;
 ;;; Commentary:
-;;; 2016 (c) Patrick Arthur Brown
+;;;  _  _     __  _ _  _  _  _  _  _
+;;; / //_'/_///_// / //_|/ //_ /_'/
+;;;
+;;; Copyright (C) 2017 Patrick Arthur Brown
 ;;;
 ;;; Code:
 

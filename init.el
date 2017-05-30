@@ -1,10 +1,10 @@
-;;; init.el --- entry point to the neuromancer emacs cofiguration.
+;;; init.el --- entry point to emacs cofiguration.
 ;;;
 ;;; Commentary:
 ;;;  _  _     __  _ _  _  _  _  _  _
 ;;; / //_'/_///_// / //_|/ //_ /_'/
 ;;;
-;;; Copyright (C) 2016 Patrick Arthur Brown
+;;; Copyright (C) 2017 Patrick Arthur Brown
 ;;;
 ;;; Code:
 

@@ -1,7 +1,13 @@
-;;; pb-gui --- Defaults for Emacs in GUI mode
+;;; pb-gui.el --- defaults for emacs in GUI mode.
+;;;
 ;;; Commentary:
+;;;  _  _     __  _ _  _  _  _  _  _
+;;; / //_'/_///_// / //_|/ //_ /_'/
+;;;
+;;; Copyright (C) 2017 Patrick Arthur Brown
+;;;
 ;;; Code:
-;; Enable the wonders of Emacs client and server interaction
+
 (server-start)
 
 ;; No scroll-bars
@@ -9,8 +15,6 @@
 
 ;; Highlight the current line
 (global-hl-line-mode t)
-
-(require 'acme-mouse)
 
 (provide 'pb-gui)
 ;;; pb-gui ends here

@@ -1,7 +1,10 @@
 ;;; pb-go.el --- go-lang specific defaults
 ;;;
 ;;; Commentary:
-;;; Copyright (C) 2016 Patrick Arthur Brown
+;;;  _  _     __  _ _  _  _  _  _  _
+;;; / //_'/_///_// / //_|/ //_ /_'/
+;;;
+;;; Copyright (C) 2017 Patrick Arthur Brown
 ;;;
 ;;; Code:
 

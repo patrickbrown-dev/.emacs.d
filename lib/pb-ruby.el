@@ -1,9 +1,13 @@
 ;;; pb-ruby.el --- ruby configuration.
 ;;;
 ;;; Commentary:
-;;; Copyright (C) 2016 by Patrick Arthur Brown
+;;;  _  _     __  _ _  _  _  _  _  _
+;;; / //_'/_///_// / //_|/ //_ /_'/
+;;;
+;;; Copyright (C) 2017 Patrick Arthur Brown
 ;;;
 ;;; Code:
+
 (add-hook'
  ruby-mode-hook
  (lambda ()

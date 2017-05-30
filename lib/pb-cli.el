@@ -1,6 +1,13 @@
-;;; pb-cli --- Defaults for Emacs in CLI mode
+;;; pb-cli --- defaults for emacs in CLI mode.
+;;;
 ;;; Commentary:
+;;;  _  _     __  _ _  _  _  _  _  _
+;;; / //_'/_///_// / //_|/ //_ /_'/
+;;;
+;;; Copyright (C) 2017 Patrick Arthur Brown
+;;;
 ;;; Code:
+
 ;; Disable the menu-bar
 (menu-bar-mode -1)
 

@@ -1,7 +1,10 @@
-;;; pb-util.el --- some utility functions
+;;; pb-util.el --- utility functions.
 ;;;
 ;;; Commentary:
-;;; Copyright (C) 2016 by Patrick Arthur Brown
+;;;  _  _     __  _ _  _  _  _  _  _
+;;; / //_'/_///_// / //_|/ //_ /_'/
+;;;
+;;; Copyright (C) 2017 Patrick Arthur Brown
 ;;;
 ;;; Code:
 
