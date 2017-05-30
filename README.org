@@ -2,3 +2,18 @@
 #+AUTHOR: Patrick Arthur Brown <pat@pab.io>
 
 My emacs configuration.
+
+#+BEGIN_SRC
+.
+├── README.org
+├── init.el
+└── lib
+    ├── pb-cli.el
+    ├── pb-defaults.el
+    ├── pb-go.el
+    ├── pb-gui.el
+    ├── pb-keybinds.el
+    ├── pb-python.el
+    ├── pb-ruby.el
+    └── pb-util.el
+#+END_SRC
