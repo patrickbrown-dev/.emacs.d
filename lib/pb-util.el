@@ -34,7 +34,10 @@ buffer is not visiting a file"
 a file named 'TAGS'. If found, set 'tags-table-list' with that path as an argument
 otherwise raises an error."
   (interactive)
-  (setq tags-table-list (cons (pb-find-tags-file) tags-table-list)))
+  (let ((tag-file (pb-find-tags-file)))
+    (when tag-file
+      (unless (member tag-file tags-table-list)
+        (setq tags-table-list (cons tag-file tags-table-list))))))
 
 (setq pb-path-to-ctags "/usr/local/bin/ctags")
 
