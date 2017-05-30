@@ -7,6 +7,7 @@
 ;;; Copyright (C) 2016 Patrick Arthur Brown
 ;;;
 ;;; Code:
+
 (require 'package)
 (add-to-list 'package-archives
              '("melpa" . "https://melpa.org/packages/") t)
@@ -41,9 +42,5 @@
 (require 'pb-go)
 (require 'pb-ruby)
 (require 'pb-python)
-(require 'pb-elixir)
-(require 'pb-haskell)
-(require 'pb-rust)
-(require 'acme-mouse)
 
 ;;; init.el ends here
