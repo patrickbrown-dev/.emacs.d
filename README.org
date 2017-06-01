@@ -1,7 +1,7 @@
 #+TITLE: .emacs.d
-#+AUTHOR: Patrick Arthur Brown <pat@pab.io>
+#+AUTHOR: Patrick Arthur Brown <patrick.arthur.brown@gmail.com>
 
-My emacs configuration.
+A lightweight emacs configuration (~M-x emacs-init-time~ 1.9 seconds).
 
 #+BEGIN_SRC
 .
