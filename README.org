@@ -1,7 +1,7 @@
 #+TITLE: .emacs.d
 #+AUTHOR: Patrick Arthur Brown <patrick.arthur.brown@gmail.com>
 
-A lightweight emacs configuration (~M-x emacs-init-time~ 1.9 seconds).
+A lightweight† emacs configuration.
 
 #+BEGIN_SRC
 .
@@ -17,3 +17,10 @@ A lightweight emacs configuration (~M-x emacs-init-time~ 1.9 seconds).
     ├── pb-ruby.el
     └── pb-util.el
 #+END_SRC
+
+
+† ~M-x emacs-init-time~
+
+| Vanilla |  pb | spacemacs |
+|---------+-----+-----------|
+|     0.2 | 1.9 |       8.2 |
