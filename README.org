@@ -21,6 +21,6 @@ A lightweight† emacs configuration.
 
 † ~M-x emacs-init-time~
 
-| Vanilla |  pb | spacemacs |
-|---------+-----+-----------|
-|     0.2 | 1.9 |       8.2 |
+| Vanilla     | pb          | spacemacs   |
+|-------------+-------------+-------------|
+| 0.2 seconds | 0.6 seconds | 8.2 seconds |

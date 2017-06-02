@@ -86,10 +86,5 @@
 (setq mac-command-modifier 'meta)
 (setq mac-option-modifier nil)
 
-(use-package exec-path-from-shell
-  :ensure t
-  :if (memq window-system '(mac ns))
-  :config (exec-path-from-shell-initialize))
-
 (provide 'pb-defaults)
 ;;; pb-defaults.el ends here
