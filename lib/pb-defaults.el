@@ -78,7 +78,7 @@
 (show-paren-mode 1)
 
 ;; Whitespace
-(setq whitespace-style (quote (face trailing empty lines-tail indentation)))
+(setq whitespace-style (quote (face trailing empty indentation)))
 
 ;; Delete trailing whitespace
 (add-hook 'before-save-hook 'delete-trailing-whitespace)
