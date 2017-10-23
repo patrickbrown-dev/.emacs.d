@@ -9,7 +9,7 @@
 ;;; Code:
 
 (defalias 'workon 'pyvenv-workon)
-(setenv "WORKON_HOME" "~/.envs")
+(setenv "WORKON_HOME" "~/.venvs")
 
 (add-hook'
  python-mode-hook
