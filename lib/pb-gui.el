@@ -22,8 +22,13 @@
 
 ;; Use Roboto Mono
 (add-to-list 'default-frame-alist
-             '(font . "Roboto Mono-12"))
+             '(font . "Roboto Mono-14"))
 
+;; TODO: Use gruvbox-light-hard in daytime and gruvbox-dark-soft at nightime.
+;; Generally it is better to use high-contrast light themes in well-lit
+;; environments and low-contrast dark themes in dark environments. You'll want
+;; to parse the time out of (current-time-string) "Sun Oct 22 21:45:10 2017"
+;; which won't be very fun.
 (use-package gruvbox-theme
   :ensure t
   :config (load-theme 'gruvbox-light-hard))
