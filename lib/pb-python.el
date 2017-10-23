@@ -14,6 +14,10 @@
 (add-hook'
  python-mode-hook
  (lambda ()
+   (use-package nlinum
+     :ensure t
+     :config (nlinum-mode t))
+
    (whitespace-mode t)))
 
 (provide 'pb-python)
