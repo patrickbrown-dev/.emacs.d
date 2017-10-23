@@ -28,10 +28,12 @@
   ;; Use gruvbox-light-hard in daytime and gruvbox-dark-soft at nightime.
   ;; Generally it is better to use high-contrast light themes in well-lit
   ;; environments and low-contrast dark themes in dark environments.
-  ;; TODO: Implement this with (nth 2 (decode-time)).
   (use-package gruvbox-theme
     :ensure t
-    :config (load-theme 'gruvbox-light-hard)))
+    :config (let ((hour (nth 2 (decode-time))))
+              (if (and (> hour 6) (< hour 20))
+                  (load-theme 'gruvbox-light-hard)
+                (load-theme 'gruvbox-dark-soft)))
 
 (provide 'pb-gui)
 ;;; pb-gui ends here
