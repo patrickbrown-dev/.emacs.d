@@ -16,5 +16,12 @@
 ;; Highlight the current line
 (global-hl-line-mode t)
 
+(add-to-list 'default-frame-alist '(height . 999999))
+(add-to-list 'default-frame-alist '(width . 180))
+
+(use-package gruvbox-theme
+  :ensure t
+  :config (load-theme 'gruvbox-light-hard))
+
 (provide 'pb-gui)
 ;;; pb-gui ends here
