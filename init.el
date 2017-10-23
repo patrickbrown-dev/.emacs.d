@@ -35,9 +35,8 @@
 
 (require 'pb-defaults)
 (require 'pb-util)
-(if (display-graphic-p)
-    (require 'pb-gui)
-  (require 'pb-cli))
+(require 'pb-gui)
+(require 'pb-cli)
 (require 'pb-keybinds)
 (require 'pb-go)
 (require 'pb-ruby)

@@ -8,8 +8,9 @@
 ;;;
 ;;; Code:
 
-;; Disable the menu-bar
-(menu-bar-mode -1)
+(unless (display-graphic-p)
+  ;; Disable the menu-bar
+  (menu-bar-mode -1))
 
 (provide 'pb-cli)
 ;;; pb-cli ends here
