@@ -41,6 +41,9 @@
             (ivy-mode 1)
             (setq ivy-use-virtual-buffers t)))
 
+(setenv "PATH" (concat (getenv "PATH") ":/usr/local/bin"))
+(setq exec-path (append exec-path '("/usr/local/bin")))
+
 (use-package etags-select
   :ensure t
   :bind (("C-c ." . etags-select-find-tag-at-point)))
