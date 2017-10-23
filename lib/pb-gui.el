@@ -33,7 +33,7 @@
     :config (let ((hour (nth 2 (decode-time))))
               (if (and (> hour 6) (< hour 20))
                   (load-theme 'gruvbox-light-hard)
-                (load-theme 'gruvbox-dark-soft)))
+                (load-theme 'gruvbox-dark-soft)))))
 
 (provide 'pb-gui)
 ;;; pb-gui ends here
