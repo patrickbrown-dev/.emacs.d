@@ -41,5 +41,6 @@
 (require 'pb-go)
 (require 'pb-ruby)
 (require 'pb-python)
+(require 'pb-javascript)
 
 ;;; init.el ends here
