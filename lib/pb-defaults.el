@@ -44,9 +44,10 @@
 (setenv "PATH" (concat (getenv "PATH") ":/usr/local/bin"))
 (setq exec-path (append exec-path '("/usr/local/bin")))
 
-(use-package etags-select
-  :ensure t
-  :bind (("C-c ." . etags-select-find-tag-at-point)))
+;; TODO: This is failing, not sure why.
+; (use-package etags-select
+;  :ensure t
+;  :bind (("C-c ." . etags-select-find-tag-at-point)))
 
 ;; Start in scratch buffer
 (setq inhibit-startup-screen t)
