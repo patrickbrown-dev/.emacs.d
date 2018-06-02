@@ -19,21 +19,7 @@
 
   ;; Initialize with a fairly large window
   (add-to-list 'default-frame-alist '(height . 999999))
-  (add-to-list 'default-frame-alist '(width . 180))
-
-  ;; Use Roboto Mono
-  (add-to-list 'default-frame-alist
-               '(font . "Roboto Mono-14"))
-
-  ;; Use gruvbox-light-hard in daytime and gruvbox-dark-soft at nightime.
-  ;; Generally it is better to use high-contrast light themes in well-lit
-  ;; environments and low-contrast dark themes in dark environments.
-  (use-package gruvbox-theme
-    :ensure t
-    :config (let ((hour (nth 2 (decode-time))))
-              (if (and (> hour 6) (< hour 20))
-                  (load-theme 'gruvbox-light-hard)
-                (load-theme 'gruvbox-dark-soft)))))
+  (add-to-list 'default-frame-alist '(width . 180)))
 
 (provide 'pb-gui)
 ;;; pb-gui ends here
