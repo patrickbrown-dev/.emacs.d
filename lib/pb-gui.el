@@ -19,7 +19,15 @@
 
   ;; Initialize with a fairly large window
   (add-to-list 'default-frame-alist '(height . 999999))
-  (add-to-list 'default-frame-alist '(width . 180)))
+  (add-to-list 'default-frame-alist '(width . 180))
+
+  (use-package exec-path-from-shell
+    :ensure t
+    :config (exec-path-from-shell-initialize))
+
+  (use-package gruvbox-theme
+    :ensure t
+    :config (load-theme 'gruvbox-dark-soft)))
 
 (provide 'pb-gui)
 ;;; pb-gui ends here

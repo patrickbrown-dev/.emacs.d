@@ -23,10 +23,6 @@
   :config
   (add-hook 'after-init-hook 'global-company-mode))
 
-(use-package flycheck
-  :ensure t
-  :config (add-hook 'after-init-hook 'global-flycheck-mode))
-
 (use-package ivy
   :ensure counsel
   :bind (("C-c C-r" . ivy-resume)
@@ -89,6 +85,8 @@
 (setq mac-command-key-is-meta t)
 (setq mac-command-modifier 'meta)
 (setq mac-option-modifier nil)
+
+(visual-line-mode t)
 
 (provide 'pb-defaults)
 ;;; pb-defaults.el ends here

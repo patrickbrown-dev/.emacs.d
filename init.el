@@ -38,9 +38,11 @@
 (require 'pb-gui)
 (require 'pb-cli)
 (require 'pb-keybinds)
+(require 'pb-org)
 (require 'pb-go)
 (require 'pb-ruby)
 (require 'pb-python)
 (require 'pb-javascript)
+(require 'pb-scala)
 
 ;;; init.el ends here
