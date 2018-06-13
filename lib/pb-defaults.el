@@ -38,6 +38,7 @@
             (setq ivy-use-virtual-buffers t)))
 
 (setenv "PATH" (concat (getenv "PATH") ":/usr/local/bin"))
+(setenv "PATH" (concat (getenv "PATH") ":/Library/TeX/texbin"))
 (setq exec-path (append exec-path '("/usr/local/bin")))
 
 ;; TODO: This is failing, not sure why.
