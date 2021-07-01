@@ -43,6 +43,5 @@
 (require 'pb-ruby)
 (require 'pb-python)
 (require 'pb-javascript)
-(require 'pb-scala)
 
 ;;; init.el ends here
