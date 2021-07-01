@@ -1,5 +1,5 @@
 #+TITLE: .emacs.d
-#+AUTHOR: Patrick Arthur Brown <patrick.arthur.brown@gmail.com>
+#+AUTHOR: Patrick Arthur Brown <patrick.arthur.brown@icloud.com>
 
 A lightweight† emacs configuration.
 
