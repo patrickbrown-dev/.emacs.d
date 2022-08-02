@@ -1,10 +1,8 @@
 ;;; pb-keybinds.el --- global keybindings.
 ;;;
 ;;; Commentary:
-;;;  _  _     __  _ _  _  _  _  _  _
-;;; / //_'/_///_// / //_|/ //_ /_'/
 ;;;
-;;; Copyright (C) 2017 Patrick Arthur Brown
+;;; Copyright (C) 2017 Patrick Brown
 ;;;
 ;;; Code:
 

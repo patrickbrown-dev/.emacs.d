@@ -1,10 +1,8 @@
 ;;; pb-org.el --- org-mode hooks.
 ;;;
 ;;; Commentary:
-;;;  _  _     __  _ _  _  _  _  _  _
-;;; / //_'/_///_// / //_|/ //_ /_'/
 ;;;
-;;; Copyright (C) 2018 Patrick Arthur Brown
+;;; Copyright (C) 2018 Patrick Brown
 ;;;
 ;;; Code:
 
