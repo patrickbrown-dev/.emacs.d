@@ -26,9 +26,6 @@
      :ensure t
      :config (nlinum-mode))
 
-   (use-package rvm
-     :ensure t)
-
    (use-package ruby-refactor
      :ensure t
      :config

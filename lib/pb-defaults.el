@@ -35,14 +35,25 @@
             (ivy-mode 1)
             (setq ivy-use-virtual-buffers t)))
 
+(use-package which-key
+  :ensure t
+  :config (which-key-mode))
+
+(use-package lsp-mode
+  :ensure t
+  :init
+  ;; Set prefix for lsp-command-keymap
+  (setq lsp-keymap-prefix "C-c l")
+  :hook ((ruby-mode . lsp)
+         (lsp-mode . lsp-enable-which-key-integration))
+  :commands lsp)
+
+(use-package lsp-ui :commands lsp-ui-mode)
+(use-package lsp-ivy :commands lsp-ivy-workspace-symbol)
+
 (setenv "PATH" (concat (getenv "PATH") ":/usr/local/bin"))
 (setenv "PATH" (concat (getenv "PATH") ":/Library/TeX/texbin"))
 (setq exec-path (append exec-path '("/usr/local/bin")))
-
-;; TODO: This is failing, not sure why.
-; (use-package etags-select
-;  :ensure t
-;  :bind (("C-c ." . etags-select-find-tag-at-point)))
 
 ;; Start in scratch buffer
 (setq inhibit-startup-screen t)

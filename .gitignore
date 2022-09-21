@@ -4,6 +4,7 @@ eshell/
 url/
 semanticdb/
 .python-environments/
+transient/
 projectile-bookmarks.eld
 secrets.el
 custom.el
@@ -15,3 +16,4 @@ ac-comphist.dat
 session.*
 network-security.data
 TAGS
+.lsp-session-v1

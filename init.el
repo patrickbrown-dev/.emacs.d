@@ -20,6 +20,9 @@
 
 (require 'use-package)
 
+(use-package gnu-elpa-keyring-update
+  :ensure t)
+
 ;; Load path
 (add-to-list 'load-path "~/.emacs.d/lib")
 
