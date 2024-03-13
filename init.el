@@ -2,7 +2,7 @@
 ;;;
 ;;; Commentary:
 ;;;
-;;; Copyright (C) 2017 Patrick Brown
+;;; Copyright (C) 2015–2024 Patrick Brown
 ;;;
 ;;; Code:
 
@@ -40,9 +40,7 @@
 (require 'pb-cli)
 (require 'pb-keybinds)
 (require 'pb-org)
-(require 'pb-go)
 (require 'pb-ruby)
-(require 'pb-python)
 (require 'pb-javascript)
 
 ;;; init.el ends here

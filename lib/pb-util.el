@@ -2,7 +2,7 @@
 ;;;
 ;;; Commentary:
 ;;;
-;;; Copyright (C) 2017 Patrick Brown
+;;; Copyright (C) 2015–2024 Patrick Brown
 ;;;
 ;;; Code:
 
