@@ -1,5 +1,5 @@
 #+TITLE: .emacs.d
-#+AUTHOR: Patrick Arthur Brown <patrick.arthur.brown@icloud.com>
+#+AUTHOR: Patrick Brown <ptrckbrwn@icloud.com>
 
 A lightweight† emacs configuration.
 
@@ -10,10 +10,9 @@ A lightweight† emacs configuration.
 └── lib
     ├── pb-cli.el
     ├── pb-defaults.el
-    ├── pb-go.el
     ├── pb-gui.el
+    ├── pb-javascript.el
     ├── pb-keybinds.el
-    ├── pb-python.el
     ├── pb-ruby.el
     └── pb-util.el
 #+END_SRC
