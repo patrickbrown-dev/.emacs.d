@@ -17,3 +17,4 @@ session.*
 network-security.data
 TAGS
 .lsp-session-v1
+/README.el

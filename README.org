@@ -1,25 +1,209 @@
-#+TITLE: .emacs.d
-#+AUTHOR: Patrick Brown <ptrckbrwn@icloud.com>
+#+TITLE: Pb
+#+SUBTITLE: A heavy metal emacs configuration.
+#+AUTHOR: Patrick Brown
+#+EMAIL: hello@patrickbrown.dev
 
-A lightweight† emacs configuration.
+* Defaults
 
-#+BEGIN_SRC
-.
-├── README.org
-├── init.el
-└── lib
-    ├── pb-cli.el
-    ├── pb-defaults.el
-    ├── pb-gui.el
-    ├── pb-javascript.el
-    ├── pb-keybinds.el
-    ├── pb-ruby.el
-    └── pb-util.el
+These are general defaults + packages that I want pretty much
+everywhere.
+
+#+BEGIN_SRC emacs-lisp
+  ;; Load path
+  (add-to-list 'load-path "~/.emacs.d/lib")
+
+  ;; Secrets
+  (when (file-exists-p "~/.emacs.d/secrets.el")
+    (load "~/.emacs.d/secrets"))
+
+  ;; Customization file
+  (setq custom-file "~/.emacs.d/custom.el")
+  (load custom-file)
+
+  (use-package magit
+    :ensure t
+    :init (setq magit-last-seen-setup-instructions "1.4.0")
+    :bind ("C-c g s" . magit-status))
+
+  (use-package company
+    :ensure t
+    :init
+    (setq company-tooltip-limit 20)
+    (setq company-idle-delay .3)
+    (setq company-echo-delay 0)
+    (setq company-begin-commands '(self-insert-command))
+    :config
+    (add-hook 'after-init-hook 'global-company-mode))
+
+  (use-package ivy
+    :ensure counsel
+    :bind (("C-c C-r" . ivy-resume)
+           ("M-x" . counsel-M-x)
+           ("\C-s" . swiper)
+           ("C-x C-f" . counsel-find-file)
+           ("C-x l" . counsel-locate)
+           ("C-c f" . counsel-git)
+           ("C-c g g" . counsel-git-grep)
+           ("C-c a g" . counsel-ag))
+    :config (lambda ()
+              (ivy-mode 1)
+              (setq ivy-use-virtual-buffers t)))
+
+  (use-package lsp-mode
+    :ensure t
+    :commands (lsp lsp-deferred)
+    :init
+    (setq lsp-keymap-prefix "C-c l")
+    (setq lsp-enabled-clients '(sorbet-ls ts-ls))
+    :hook (((graphql-mode js-base-mode ruby-base-mode typescript-ts-base-mode) . lsp-deferred)
+           ;; if you want which-key integration
+           (lsp-mode . lsp-enable-which-key-integration)))
+
+  (use-package lsp-ui
+    :ensure t
+    :commands lsp-ui-mode
+    :hook (lsp-mode . lsp-ui-mode)
+
+    :custom
+    (lsp-ui-peek-always-show t)
+    (lsp-ui-sideline-show-hover t)
+    (lsp-ui-doc-enable nil))
+
+  (use-package which-key
+    :ensure t
+    :config (which-key-mode))
+
+  (use-package lsp-ivy :commands lsp-ivy-workspace-symbol)
+
+  (setenv "PATH" (concat (getenv "PATH") ":/usr/local/bin"))
+  (setenv "PATH" (concat (getenv "PATH") ":/Library/TeX/texbin"))
+  (setq exec-path (append exec-path '("/usr/local/bin")))
+
+  ;; Start in scratch buffer
+  (setq inhibit-startup-screen t)
+  (setq inhibit-splash-screen t)
+
+  ;; Show line/column in footer
+  (line-number-mode t)
+  (column-number-mode t)
+
+  ;; Use ssh for tramp
+  (setq tramp-default-method "ssh")
+
+  ;; Disable tool bar
+  (tool-bar-mode -1)
+
+  ;; No tabs, ever
+  (setq-default indent-tabs-mode nil)
+
+  ;; Kill the alarm bell
+  (setq ring-bell-function 'ignore)
+
+  ;; Move backups and autosaves to temporary dir
+  (setq backup-directory-alist
+        `((".*" . ,temporary-file-directory)))
+  (setq auto-save-file-name-transforms
+        `((".*" ,temporary-file-directory t)))
+
+  ;; Paren highlighting
+  (show-paren-mode 1)
+
+  ;; Whitespace
+  (setq whitespace-style (quote (face trailing empty indentation)))
+
+  ;; Delete trailing whitespace
+  (add-hook 'before-save-hook 'delete-trailing-whitespace)
+
+  ;; OS X command as meta
+  (setq mac-option-key-is-meta nil)
+  (setq mac-command-key-is-meta t)
+  (setq mac-command-modifier 'meta)
+  (setq mac-option-modifier nil)
+
+  (visual-line-mode t)
+
+  (load-theme 'leuven t)
+
+  (global-set-key (kbd "C-c C-u") 'comment-or-uncomment-region)
+  (global-set-key (kbd "C-h") 'delete-backward-char)
+  (global-set-key (kbd "C-M-h") 'backward-kill-word)
+  (global-set-key (kbd "C-c n") 'next-buffer)
+  (global-set-key (kbd "C-c p") 'previous-buffer)
+  (global-set-key (kbd "C-c C-j") 'pb-util-top-join-line)
 #+END_SRC
 
+* GUI
 
-† ~M-x emacs-init-time~
+When emacs is running in a window, there's some additional settings
+(like default height and width of window) that I don't need when emacs
+is running in the CLI.
 
-| Vanilla     | pb          | spacemacs   |
-|-------------+-------------+-------------|
-| 0.2 seconds | 0.6 seconds | 8.2 seconds |
+#+BEGIN_SRC emacs-lisp
+  (when (display-graphic-p)
+      (server-start)
+
+      ;; No scroll-bars
+      (scroll-bar-mode -1)
+
+      ;; Highlight the current line
+      (global-hl-line-mode t)
+
+      ;; Initialize with a fairly large window
+      (add-to-list 'default-frame-alist '(height . 999999))
+      (add-to-list 'default-frame-alist '(width . 180))
+
+      (use-package exec-path-from-shell
+        :ensure t
+        :config (exec-path-from-shell-initialize)))
+#+END_SRC
+
+* CLI
+
+Likewise, there's some CLI-specific settings I prefer that I don't
+need running when emacs is in a window.
+
+#+BEGIN_SRC emacs-lisp
+  (unless (display-graphic-p)
+    ;; Disable the menu-bar
+    (menu-bar-mode -1))
+#+END_SRC
+
+* Ruby
+
+There's a lot going on here that's in flux, I'll explain later when
+things stabilize.
+
+#+BEGIN_SRC emacs-lisp
+(use-package yaml-mode :ensure t)
+
+(add-hook'
+ ruby-mode-hook
+ (lambda ()
+   (use-package rspec-mode
+     :ensure t
+     :config
+     (add-hook 'after-init-hook 'inf-ruby-switch-setup)
+     (defadvice rspec-compile (around rspec-compile-around)
+       (let ((shell-file-name "/bin/zsh"))
+         ad-do-it))
+
+     (ad-activate 'rspec-compile)
+     (rspec-mode))
+
+   (use-package nlinum
+     :ensure t
+     :config (nlinum-mode))
+
+   (use-package ruby-refactor
+     :ensure t
+     :config
+     (setq ruby-refactor-add-parens t)
+     (ruby-refactor-mode-launch))
+
+   (whitespace-mode t)
+
+   (defun rspec-outline ()
+     "Opens a buffer with rspec outline."
+     (interactive)
+     (multi-occur (list (current-buffer)) "^\s+\\(it\\\|describe\\\|context\\)"))))
+#+END_SRC
