@@ -1,9 +1,10 @@
 #+TITLE: Pb
-#+SUBTITLE: A heavy metal emacs configuration.
 #+AUTHOR: Patrick Brown
 #+EMAIL: hello@patrickbrown.dev
 
-* Defaults
+A heavy metal emacs configuration.
+
+** Defaults
 
 These are general defaults + packages that I want pretty much
 everywhere.
@@ -132,7 +133,7 @@ everywhere.
   (global-set-key (kbd "C-c C-j") 'pb-util-top-join-line)
 #+END_SRC
 
-* GUI
+** GUI
 
 When emacs is running in a window, there's some additional settings
 (like default height and width of window) that I don't need when emacs
@@ -157,7 +158,7 @@ is running in the CLI.
         :config (exec-path-from-shell-initialize)))
 #+END_SRC
 
-* CLI
+** CLI
 
 Likewise, there's some CLI-specific settings I prefer that I don't
 need running when emacs is in a window.
@@ -168,7 +169,7 @@ need running when emacs is in a window.
     (menu-bar-mode -1))
 #+END_SRC
 
-* Ruby
+** Ruby
 
 There's a lot going on here that's in flux, I'll explain later when
 things stabilize.
