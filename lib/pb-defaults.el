@@ -108,5 +108,7 @@
 
 (visual-line-mode t)
 
+(load-theme 'leuven t)
+
 (provide 'pb-defaults)
 ;;; pb-defaults.el ends here
