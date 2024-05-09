@@ -133,6 +133,14 @@ everywhere.
   (global-set-key (kbd "C-c C-j") 'pb-util-top-join-line)
 #+END_SRC
 
+I never want to suspend-frame. Ever. The behavior in MacOS is to minimize Emacs,
+and it's default binding of C-z is too close to C-x. This leads to a lot of
+accidental minimizing.
+
+#+BEGIN_SRC emacs-lisp
+  (unbind-key "C-z" global-map)
+#+END_SRC
+
 ** GUI
 
 When emacs is running in a window, there's some additional settings
