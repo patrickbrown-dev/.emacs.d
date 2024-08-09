@@ -5,6 +5,7 @@ url/
 semanticdb/
 .python-environments/
 transient/
+eln-cache/
 projectile-bookmarks.eld
 secrets.el
 custom.el
