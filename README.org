@@ -1,6 +1,6 @@
 #+TITLE: Pb
 #+AUTHOR: Patrick Brown
-#+EMAIL: hello@patrickbrown.dev
+#+EMAIL: patrick.brown@hey.com
 
 A heavy metal emacs configuration.
 
