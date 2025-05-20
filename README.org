@@ -19,7 +19,8 @@ everywhere.
 
   ;; Customization file
   (setq custom-file "~/.emacs.d/custom.el")
-  (load custom-file)
+  (when (file-exists-p "~/.emacs.d/custom.el")
+    (load custom-file))
 
   (use-package magit
     :ensure t
