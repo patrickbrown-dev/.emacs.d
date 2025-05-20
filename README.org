@@ -124,8 +124,6 @@ everywhere.
 
   (visual-line-mode t)
 
-  (load-theme 'leuven t)
-
   (global-set-key (kbd "C-c C-u") 'comment-or-uncomment-region)
   (global-set-key (kbd "C-h") 'delete-backward-char)
   (global-set-key (kbd "C-M-h") 'backward-kill-word)
